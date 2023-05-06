@@ -60,15 +60,15 @@ export function CreateCard() {
       <form onSubmit={handleSubmit} action="" method="post">
         <p>{formErrors.title}</p>
         <label htmlFor="">Workout Title
-          <input type="text" name="title" id="" onChange={handleChange} value={formData.title} />
+          <input type="text" name="title" id="title" onChange={handleChange} value={formData.title} />
         </label>
         <p>{formErrors.description}</p>
         <label htmlFor="">Workout Description
-          <input type="text" name="description" id="" onChange={handleChange} value={formData.description} />
+          <input type="text" name="description" id="description" onChange={handleChange} value={formData.description} />
         </label>
         <p>{formErrors.image}</p>
         <label htmlFor="">Workout Image
-          <input type="text" name="image" id="" onChange={handleChange} value={formData.image} />
+          <input type="text" name="image" id="image" onChange={handleChange} value={formData.image} />
         </label>
         <button>Add New Workout!</button>
       </form>

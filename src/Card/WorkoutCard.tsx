@@ -2,7 +2,7 @@
 interface WorkoutCardProps {
   workout: {
     title: string;
-    img: string;
+    image: string;
     description: string;
   }
 }
@@ -17,7 +17,7 @@ interface WorkoutCardProps {
 export function WorkoutCard({ workout }: WorkoutCardProps) {
 
   return (
-    <div style={{backgroundImage: workout.img}}>
+    <div style={{backgroundImage: workout.image}}>
       <h2>{workout.title}</h2>
       <p>{workout.description}</p>
     </div>
