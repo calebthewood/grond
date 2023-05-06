@@ -10,7 +10,7 @@ interface ICard {
   };
 }
 
-export const CardList: ICard[] = [
+export const cardList: ICard[] = [
   {
     title: 'Push-ups',
     description: 'Keeping your elbows close, and torso rigid, dip until your chest nearly touches the ground',
@@ -34,8 +34,8 @@ interface IDeck {
   exercises: ICard[];
 }
 
-export const TestDeck: IDeck = {
+export const testDeck: IDeck = {
   title: 'Test Deck 1',
   description: 'This workout deck contains pushups, pullups, and squats.',
-  exercises: CardList
+  exercises: cardList
 };
