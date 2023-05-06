@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { testDeck } from "../MockData";
-import { DeckDetail } from
+import { DeckDetail } from "./DeckDetail";
 
 
 export function DeckList() {
