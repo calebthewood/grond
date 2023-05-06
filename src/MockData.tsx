@@ -31,11 +31,15 @@ export const cardList: ICard[] = [
 interface IDeck {
   title: string;
   description: string;
+  difficulty: number;
+  lastCompleted: string | null;
   exercises: ICard[];
 }
 
 export const testDeck: IDeck = {
   title: 'Test Deck 1',
   description: 'This workout deck contains pushups, pullups, and squats.',
-  exercises: cardList
+  difficulty: 3,
+  lastCompleted: '--/--/--',
+  exercises: cardList,
 };
