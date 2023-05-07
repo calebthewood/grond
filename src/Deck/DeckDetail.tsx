@@ -1,4 +1,5 @@
 import { IDeck } from "../MockData";
+import './deckStyles.css'
 
 interface DeckListProps {
   deck: IDeck;
@@ -10,7 +11,7 @@ interface DeckListProps {
 export function DeckDetail({ deck }: DeckListProps) {
 
   return (
-    <div>
+    <div className="deck-detail">
       <h3>{deck.title}</h3>
       <p>{deck.description}</p>
       <p>{deck.difficulty}</p>

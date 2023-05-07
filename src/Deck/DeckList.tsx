@@ -1,22 +1,27 @@
-import { useState } from "react";
-import { testDeck } from "../MockData";
+import { IDeck } from "../MockData";
 import { DeckDetail } from "./DeckDetail";
+
 
 interface IDeckListProps {
   topLevelNav: (to: string) => void;
+  selectDeck: (i: number) => void;
+  decks: IDeck[];
 }
 
 
-export function DeckList({ topLevelNav }: IDeckListProps) {
+export function DeckList({ decks, topLevelNav, selectDeck }: IDeckListProps) {
 
-  const [decks, setDecks] = useState([testDeck, testDeck, testDeck]);
+  function handleClick(i: number) {
+    selectDeck(i);
+    topLevelNav('workout');
+  }
 
   return (
     <>
       <h2>Your Workout Decks</h2>
       <ul>
-        {decks.map(deck => <li><DeckDetail deck={deck} /></li>)}
-        <li><button>Create New Deck +</button></li>
+        {decks.map((deck, i) => <li onClick={() => handleClick(i)}><DeckDetail deck={deck} /></li>)}
+        <li><button onClick={() => topLevelNav('createdeck')}>Create New Deck +</button></li>
       </ul>
     </>
   );
