@@ -1,6 +1,6 @@
 /* Mock Data for Development. To be Replaced by Node-Express BE. */
 
-interface ICard {
+export interface ICard {
   title: string;
   description: string;
   image: string;
@@ -28,7 +28,7 @@ export const cardList: ICard[] = [
   },
 ];
 
-interface IDeck {
+export interface IDeck {
   title: string;
   description: string;
   difficulty: number;
