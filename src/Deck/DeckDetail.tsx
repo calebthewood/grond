@@ -4,6 +4,9 @@ interface DeckListProps {
   deck: IDeck;
 }
 
+/** DeckDetail
+ * Rendered by DeckList, summarizes an exercise deck
+ */
 export function DeckDetail({ deck }: DeckListProps) {
 
   return (
