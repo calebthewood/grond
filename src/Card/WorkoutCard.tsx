@@ -5,6 +5,8 @@ import './card.css';
 
 export interface WorkoutCardProps {
   workout: ICard;
+  showInfo: boolean;
+  toggleShowInfo: () => void
 }
 
 /** WorkoutCard
@@ -14,12 +16,12 @@ export interface WorkoutCardProps {
  *    description - optional additional instrutions for the workout
  * }
  */
-export function WorkoutCard({ workout }: WorkoutCardProps) {
-  const [showInfo, setShowInfo] = useState(false);
+export function WorkoutCard({ workout, showInfo, toggleShowInfo }: WorkoutCardProps) {
+
 
   return (
     <div className="base-card">
-      {showInfo ?
+      {!showInfo ?
         <>
           <header>
             <h1 className="card-title">{workout.title}</h1>
@@ -38,7 +40,7 @@ export function WorkoutCard({ workout }: WorkoutCardProps) {
       }
       <footer>
         <h2>{workout.rules.qty}<span className='card-label'>qty.</span></h2>
-        <button className="icon-btn" onClick={() => setShowInfo(!showInfo)}><InfoIcon /></button>
+        <button className="icon-btn" onClick={toggleShowInfo}><InfoIcon /></button>
       </footer>
     </div>
   );

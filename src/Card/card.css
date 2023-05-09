@@ -14,8 +14,8 @@
   height: 60px;
 }
 
-header > .card-title h1 {
-  margin: none;
+h1.card-title {
+  margin: 0;
 }
 
 .card-img {
@@ -41,6 +41,10 @@ header > .card-title h1 {
   text-align: left;
   padding-left: 0;
   line-height: 2em;
+}
+
+.step-list > ol > li {
+  border-bottom: 1px solid silver;
 }
 
 .base-card > footer {
