@@ -19,8 +19,12 @@ export function DeckList({ decks, topLevelNav, selectDeck }: IDeckListProps) {
   return (
     <>
       <h2>Your Workout Decks</h2>
-      <ul>
-        {decks.map((deck, i) => <li onClick={() => handleClick(i)}><DeckDetail deck={deck} /></li>)}
+      <ul className="deck-list">
+        {decks.map((deck, i) =>
+          <li
+            className="deck-item"
+            onClick={() => handleClick(i)}><DeckDetail deck={deck} /></li>)
+        }
         <li><button onClick={() => topLevelNav('createdeck')}>Create New Deck +</button></li>
       </ul>
     </>

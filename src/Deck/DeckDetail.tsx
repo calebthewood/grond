@@ -1,5 +1,5 @@
 import { IDeck } from "../MockData";
-import './deckStyles.css'
+import './deckStyles.css';
 
 interface DeckListProps {
   deck: IDeck;
@@ -12,10 +12,14 @@ export function DeckDetail({ deck }: DeckListProps) {
 
   return (
     <div className="deck-detail">
-      <h3>{deck.title}</h3>
-      <p>{deck.description}</p>
-      <p>{deck.difficulty}</p>
-      <p>{deck.lastCompleted}</p>
+      <div className="deck-detail-header">
+        <h2>{deck.title}</h2>
+        <div>
+          <p><i>difficulty:</i> {deck.difficulty}</p>
+          <p><i>last completed:</i> {deck.lastCompleted}</p>
+        </div>
+      </div>
+      <p className="deck-detail-description">{deck.description}</p>
     </div>
   );
 }
