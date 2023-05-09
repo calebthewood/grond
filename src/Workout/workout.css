@@ -1,3 +1,14 @@
+.return-btn {
+  display: flex;
+  flex-direction: row;
+  margin: 1em 0;
+}
+
+.return-btn > button {
+  justify-self: start;
+  padding: 7px;
+}
+
 .workout-card {
   display: inline-block;
 }
