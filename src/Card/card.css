@@ -1,0 +1,62 @@
+.base-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 500px;
+  color: black;
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid azure;
+}
+
+.base-card > header {
+  height: 60px;
+}
+
+header > .card-title h1 {
+  margin: none;
+}
+
+.card-img {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.icon-btn{
+  background-color: transparent;
+}
+
+.step-list {
+  height: 300px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.step-list > ol {
+  text-align: left;
+  padding-left: 0;
+  line-height: 2em;
+}
+
+.base-card > footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  height: min-content;
+  border-top: 1px solid #212121;
+}
+
+.base-card > footer > h2{
+  display: inline-block;
+  font-size: 3em;
+  margin: 0;
+}
+
+.base-card .card-label {
+  font-size: .4em;
+}
