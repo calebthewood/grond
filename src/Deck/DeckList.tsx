@@ -25,7 +25,7 @@ export function DeckList({ decks, topLevelNav, selectDeck }: IDeckListProps) {
             className="deck-item"
             onClick={() => handleClick(i)}><DeckDetail deck={deck} /></li>)
         }
-        <li><button onClick={() => topLevelNav('createdeck')}>Create New Deck +</button></li>
+        <li><button onClick={() => topLevelNav('cards')}>Create New Deck +</button></li>
       </ul>
     </>
   );
