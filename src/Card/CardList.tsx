@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { WorkoutCard } from "./WorkoutCard";
 import { cardList } from "../MockData";
+import { CreateNewBtn } from "./CreateCardBtn";
+import { CreateCard } from "./CreateCard";
 
 interface ICardLostProps {
   topLevelNav: (to: string) => void;
@@ -20,11 +22,28 @@ interface ICardLostProps {
 export function CardList({ topLevelNav }: ICardLostProps) {
   // long term: cards will be fetched
   const [cards, setCards] = useState(cardList);
+  const [showInfo, setShowInfo] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+
+
+  function toggleShowInfo() {
+    setShowInfo(!showInfo);
+  }
 
   return (
-    <>
-      <h2>Workout Cards</h2>
-      {cards.map(card => <WorkoutCard workout={card} />)}
-    </>
-    );
+    <div className="card-list">
+      <h2>Current Workout Cards</h2>
+      {showForm ?
+        <CreateCard /> :
+        <CreateNewBtn innerText={'Add New Card'} toggleForm={() => setShowForm(!showForm)} />}
+      <ul>
+        {cards.map((card, i) => (
+          <li className="" key={`card-${i}`}>
+            <input type="checkbox" name="card-i" id="" />
+            <WorkoutCard workout={card} showInfo={showInfo} toggleShowInfo={toggleShowInfo} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

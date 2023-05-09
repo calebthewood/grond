@@ -10,7 +10,7 @@
   border: 1px solid azure;
 }
 
-.base-card > header {
+.base-card>header {
   height: 60px;
 }
 
@@ -27,7 +27,7 @@ h1.card-title {
   opacity: 0.5;
 }
 
-.icon-btn{
+.icon-btn {
   background-color: transparent;
 }
 
@@ -37,17 +37,17 @@ h1.card-title {
   overflow-y: scroll;
 }
 
-.step-list > ol {
+.step-list>ol {
   text-align: left;
   padding-left: 0;
   line-height: 2em;
 }
 
-.step-list > ol > li {
+.step-list>ol>li {
   border-bottom: 1px solid silver;
 }
 
-.base-card > footer {
+.base-card>footer {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
@@ -55,7 +55,7 @@ h1.card-title {
   border-top: 1px solid #212121;
 }
 
-.base-card > footer > h2{
+.base-card>footer>h2 {
   display: inline-block;
   font-size: 3em;
   margin: 0;
@@ -63,4 +63,21 @@ h1.card-title {
 
 .base-card .card-label {
   font-size: .4em;
+}
+
+.card-list>ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.card-list {
+  margin: 2em;
+}
+
+.card-list>ul>li {
+  margin-bottom: 2em;
+}
+
+.create-new-btn {
+  width: 100%;
 }
