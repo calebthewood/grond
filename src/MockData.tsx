@@ -2,9 +2,9 @@
 
 export interface ICard {
   title: string;
-  description: string;
+  steps: string[];
   image: string;
-  rules?: {
+  rules: {
     qty: number | null;
     seconds: number | null;
   };
@@ -13,18 +13,30 @@ export interface ICard {
 export const cardList: ICard[] = [
   {
     title: 'Push-ups',
-    description: 'Keeping your elbows close, and torso rigid, dip until your chest nearly touches the ground',
-    image: '../assets/pushup.png',
+    steps: ['Assume a plank position', 'Elbows close to your torso', 'Dip until your chest nearly touches the ground', 'Push until your arms are fully extended', 'Keep your body rigid and repeat'],
+    image: 'pushup.png',
+    rules: {
+      qty: 25,
+      seconds: null
+    }
   },
   {
     title: 'Overhand Pull-ups',
-    description: 'Grab the bar palms facing away, sink until your arms are fully extended, then pull yourself up until your chin is above the bar.',
-    image: '../assets/pullup.png',
+    steps: ['Assume a plank position', 'Elbows close to your torso', 'Dip until your chest nearly touches the ground', 'Push until your arms are fully extended', 'Keep your body rigid and repeat'],
+    image: 'pullup.png',
+    rules: {
+      qty: 25,
+      seconds: null
+    }
   },
   {
     title: 'Squats',
-    description: 'Plant feet shoulder\'s width apart. Dip down, getting your bum as close to the ground as your legs allow. Ass to grass!',
-    image: '../assets/squat.png',
+    steps: ['Assume a plank position', 'Elbows close to your torso', 'Dip until your chest nearly touches the ground', 'Push until your arms are fully extended', 'Keep your body rigid and repeat'],
+    image: 'squat.png',
+    rules: {
+      qty: 25,
+      seconds: null
+    }
   },
 ];
 
