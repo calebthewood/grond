@@ -16,25 +16,25 @@ export const cardList: ICard[] = [
     steps: ['Assume a plank position', 'Elbows close to your torso', 'Dip until your chest nearly touches the ground', 'Push until your arms are fully extended', 'Keep your body rigid and repeat'],
     image: 'pushup.png',
     rules: {
-      qty: 25,
+      qty: 20,
       seconds: null
     }
   },
   {
     title: 'Overhand Pull-ups',
-    steps: ['Assume a plank position', 'Elbows close to your torso', 'Dip until your chest nearly touches the ground', 'Push until your arms are fully extended', 'Keep your body rigid and repeat'],
+    steps: ['Grip bar with palms out', 'Hang with arms fully extended', 'Pull up until chin is above bar', 'Return to hanging position', 'Repeat'],
     image: 'pullup.png',
     rules: {
-      qty: 25,
+      qty: 10,
       seconds: null
     }
   },
   {
     title: 'Squats',
-    steps: ['Assume a plank position', 'Elbows close to your torso', 'Dip until your chest nearly touches the ground', 'Push until your arms are fully extended', 'Keep your body rigid and repeat'],
+    steps: ['Place feet shoulders width apart', 'Hands on your head, knees slightly bent', 'Dip until your bum is near the ground', 'return to standing and repeat'],
     image: 'squat.png',
     rules: {
-      qty: 25,
+      qty: 30,
       seconds: null
     }
   },
