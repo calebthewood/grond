@@ -49,7 +49,7 @@ export function WorkoutSet({ topLevelNav, deck }: IWorkoutSetProps) {
           disabled={index <= 0}
           onClick={prev}
           className="workout-nav">←</button>
-        <WorkoutCard workout={cards[index]} showInfo={showInfo} toggleShowInfo={() => setShowInfo(!showInfo)} />
+        <WorkoutCard workout={cards[index]} showInfo={showInfo} toggleShowInfo={toggleShowInfo} />
         <button
           onClick={next}
           className="workout-nav">→</button>
