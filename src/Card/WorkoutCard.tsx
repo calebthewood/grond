@@ -1,10 +1,10 @@
+import { InfoIcon } from '../Common/Icons/Info';
+import { useState } from 'react';
+import { ICard } from '../MockData';
+import './card.css';
 
-interface WorkoutCardProps {
-  workout: {
-    title: string;
-    image: string;
-    description: string;
-  }
+export interface WorkoutCardProps {
+  workout: ICard;
 }
 
 /** WorkoutCard
@@ -15,11 +15,31 @@ interface WorkoutCardProps {
  * }
  */
 export function WorkoutCard({ workout }: WorkoutCardProps) {
+  const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <div style={{backgroundImage: workout.image}}>
-      <h2>{workout.title}</h2>
-      <p>{workout.description}</p>
+    <div className="base-card">
+      {showInfo ?
+        <>
+          <header>
+            <h1 className="card-title">{workout.title}</h1>
+          </header>
+          <div className="card-img" style={{ backgroundImage: `url('/${workout.image}')` }}></div>
+        </>
+        :
+        <>
+          <header>
+            <h1 className="card-title">Instructions:</h1>
+          </header>
+          <div className="step-list">
+            <ol>{workout.steps.map((step, i) => <li key={`step-${i}`}>{step}</li>)}</ol>
+          </div>
+        </>
+      }
+      <footer>
+        <h2>{workout.rules.qty}<span className='card-label'>qty.</span></h2>
+        <button className="icon-btn" onClick={() => setShowInfo(!showInfo)}><InfoIcon /></button>
+      </footer>
     </div>
   );
 }
