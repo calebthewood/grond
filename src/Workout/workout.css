@@ -1,0 +1,17 @@
+.workout-card {
+  display: inline-block;
+}
+
+.set-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: min-content;
+}
+
+.workout-nav {
+  height: 300px;
+  margin: 0 7px;
+}
