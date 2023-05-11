@@ -14,7 +14,7 @@ export interface ISideAForm {
 }
 
 export interface ISideBForm {
-  steps: string[]
+  steps: string[];
 }
 
 /** CreateCard
@@ -38,13 +38,14 @@ export function CreateCard({ addCard }: ICreateCardProps) {
       ...newCard,
       ...formData
     });
+    if (newCard.steps) addCard(newCard);
   }
 
   return (
     <div>
       <h2>Create a new exercise</h2>
       {showA ?
-        <SideAForm toggleForm={()=> setShowA(!showA)} updateNewCard={updateNewCard} />
+        <SideAForm toggleForm={() => setShowA(!showA)} updateNewCard={updateNewCard} />
         : <SideBForm updateNewCard={updateNewCard} />}
 
     </div>
