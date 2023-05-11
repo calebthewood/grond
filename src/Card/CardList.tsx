@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { WorkoutCard } from "./WorkoutCard";
-import { cardList } from "../MockData";
+import { ICard, cardList } from "../MockData";
 import { CreateNewBtn } from "./CreateCardBtn";
 import { CreateCard } from "./CreateCard";
 
@@ -30,11 +30,15 @@ export function CardList({ topLevelNav }: ICardLostProps) {
     setShowInfo(!showInfo);
   }
 
+  function addCard(newCard: ICard): void {
+    setCards([...cards, newCard]);
+  }
+
   return (
     <div className="card-list">
       <h2>Current Workout Cards</h2>
       {showForm ?
-        <CreateCard /> :
+        <CreateCard addCard={addCard} /> :
         <CreateNewBtn innerText={'Add New Card'} toggleForm={() => setShowForm(!showForm)} />}
       <ul>
         {cards.map((card, i) => (
