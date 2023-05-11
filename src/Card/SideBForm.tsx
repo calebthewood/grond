@@ -1,28 +1,36 @@
 import { useState } from "react";
 import { ISideBForm } from "./CreateCard";
+import { ICard } from "../MockData";
 
 interface ISideBFormProps {
   updateNewCard: (p: ISideBForm) => void;
 }
 
+interface IStepForm {
+  step: string;
+}
+
 export function SideBForm({ updateNewCard }: ISideBFormProps) {
 
-  const [form, setForm] = useState<string[]>(['']);
+  const [form, setForm] = useState<IStepForm[]>([{ step: '' }]);
 
   function handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     evt.preventDefault();
     const { name, value } = evt.target;
-    const idx = Number(name[name.length - 1]);
+    const idx = Number(name.split('-')[1]);
+    console.log("idx: ", idx);
     const copy = form;
-    copy[idx] = value;
-    setForm([...copy])
+    copy[idx].step = value;
+    setForm([...copy]);
   }
 
-  function addStep() {
-    setForm([...form, '']);
+  function addStep(evt: React.FormEvent) {
+    evt.preventDefault();
+    setForm([...form, { step: '' }]);
   }
 
-  function removeStep() {
+  function removeStep(evt: React.FormEvent) {
+    evt.preventDefault();
     setForm([...form.slice(0, -1)]);
   }
 
@@ -33,7 +41,8 @@ export function SideBForm({ updateNewCard }: ISideBFormProps) {
   function handleSubmit(evt: React.FormEvent) {
     evt.preventDefault();
     console.debug('handleSubmit');
-    updateNewCard({steps: form});
+    const steps = form.map(item => item.step);
+    updateNewCard({ steps });
   }
 
 
@@ -49,7 +58,7 @@ export function SideBForm({ updateNewCard }: ISideBFormProps) {
             name={`step-${i}`}
             id={`step-${i}`}
             onChange={handleChange}
-            value={form[i]} />
+            value={form[i].step} />
         </div>
       )}
 
@@ -61,7 +70,7 @@ export function SideBForm({ updateNewCard }: ISideBFormProps) {
           disabled={form.length >= 10}
           onClick={addStep}>+ Step</button>
       </div>
-      <button onClick={handleSubmit}>Done: Add Card!</button>
+      <button onClick={handleSubmit}>Add New Card</button>
     </form>
   );
 }
