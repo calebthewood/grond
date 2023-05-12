@@ -4,34 +4,35 @@ import { ICard } from "../MockData";
 
 interface ISideBFormProps {
   updateNewCard: (p: ISideBForm) => void;
+  toggleForm: () => void;
 }
 
 interface IStepForm {
   step: string;
 }
 
-export function SideBForm({ updateNewCard }: ISideBFormProps) {
+export function SideBForm({ updateNewCard, toggleForm }: ISideBFormProps) {
 
-  const [form, setForm] = useState<IStepForm[]>([{ step: '' }]);
+  const [formB, setFormB] = useState<IStepForm[]>([{ step: '' }]);
 
   function handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     evt.preventDefault();
     const { name, value } = evt.target;
     const idx = Number(name.split('-')[1]);
     console.log("idx: ", idx);
-    const copy = form;
+    const copy = formB;
     copy[idx].step = value;
-    setForm([...copy]);
+    setFormB([...copy]);
   }
 
   function addStep(evt: React.FormEvent) {
     evt.preventDefault();
-    setForm([...form, { step: '' }]);
+    setFormB([...formB, { step: '' }]);
   }
 
   function removeStep(evt: React.FormEvent) {
     evt.preventDefault();
-    setForm([...form.slice(0, -1)]);
+    setFormB([...formB.slice(0, -1)]);
   }
 
   /** Handle form submit
@@ -41,7 +42,7 @@ export function SideBForm({ updateNewCard }: ISideBFormProps) {
   function handleSubmit(evt: React.FormEvent) {
     evt.preventDefault();
     console.debug('handleSubmit');
-    const steps = form.map(item => item.step);
+    const steps = formB.map(item => item.step);
     updateNewCard({ steps });
   }
 
@@ -50,7 +51,7 @@ export function SideBForm({ updateNewCard }: ISideBFormProps) {
     <form action="" method="post">
       <h3>Side B: Steps</h3>
 
-      {form.map((step, i) =>
+      {formB.map((step, i) =>
         <div key={`steps-${i}`}>
           <label htmlFor={`step-${(i)}`}>{`Step ${(i + 1)}`} </label>
           <input
@@ -58,19 +59,23 @@ export function SideBForm({ updateNewCard }: ISideBFormProps) {
             name={`step-${i}`}
             id={`step-${i}`}
             onChange={handleChange}
-            value={form[i].step} />
+            value={formB[i].step} />
         </div>
       )}
 
       <div>
         <button
-          disabled={!form.length}
+          disabled={!formB.length}
           onClick={removeStep}>- Step</button>
         <button
-          disabled={form.length >= 10}
+          disabled={formB.length >= 10}
           onClick={addStep}>+ Step</button>
       </div>
-      <button onClick={handleSubmit}>Add New Card</button>
+
+      <div>
+        <button onClick={toggleForm}>Back</button>
+        <button onClick={handleSubmit}>Add New Card</button>
+      </div>
     </form>
   );
 }

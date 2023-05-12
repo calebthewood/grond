@@ -32,13 +32,14 @@ export function CardList({ topLevelNav }: ICardLostProps) {
 
   function addCard(newCard: ICard): void {
     setCards([...cards, newCard]);
+    setShowInfo(!showInfo);
   }
 
   return (
     <div className="card-list">
       <h2>Current Workout Cards</h2>
       {showForm ?
-        <CreateCard addCard={addCard} /> :
+        <CreateCard hideForm={() => setShowForm(false)} addCard={addCard}  /> :
         <CreateNewBtn innerText={'Add New Card'} toggleForm={() => setShowForm(!showForm)} />}
       <ul>
         {cards.map((card, i) => (

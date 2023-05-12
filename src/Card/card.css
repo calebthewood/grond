@@ -81,3 +81,74 @@ h1.card-title {
 .create-new-btn {
   width: 100%;
 }
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 500px;
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid azure;
+}
+
+.form-title {}
+
+.form-body {}
+
+.form-field {
+  display: flex;
+  flex-direction: row;
+  margin: 1em .5em;
+}
+
+.form-field>label {
+  display: flex;
+  padding: 4px;
+  width: 20%
+}
+
+.form-field>input {
+  display: flex;
+  flex-grow: 1;
+  padding: 4px;
+}
+
+.form-field>select {
+  display: flex;
+  flex-grow: 1;
+  padding: 4px
+}
+
+.step-btns {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: end;
+  flex-grow: 1;
+  margin: 1em .5em;
+}
+
+.step-btn {
+  /* height: 16px; */
+  margin: 2px;
+  padding: 4px 8px;
+  font-size: .7em;
+  width: 30%
+}
+
+.submit-btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-cancel {
+  flex-grow: .3;
+  margin: 7px;
+}
+
+.form-submit {
+  flex-grow: .7;
+  margin: 7px;
+}

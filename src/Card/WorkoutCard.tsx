@@ -17,8 +17,6 @@ export interface WorkoutCardProps {
  * }
  */
 export function WorkoutCard({ workout, showInfo, toggleShowInfo }: WorkoutCardProps) {
-
-
   return (
     <div className="base-card">
       {!showInfo ?
