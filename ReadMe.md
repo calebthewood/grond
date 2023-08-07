@@ -37,3 +37,5 @@ App will contain decks of workout cards, and the ability to create new cards and
     traits: ['chest', 'arms', 'weights', 'equipment', 'dumbells'],
     ...etc
   ```
+
+

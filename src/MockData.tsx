@@ -8,6 +8,8 @@ export interface ICard {
     qty: number | null;
     seconds: number | null;
   };
+  equipment: string[];
+  traits: string[];
 }
 
 export const cardList: ICard[] = [
@@ -18,7 +20,9 @@ export const cardList: ICard[] = [
     rules: {
       qty: 20,
       seconds: null
-    }
+    },
+    equipment: [],
+    traits: ['chest', 'back', 'core']
   },
   {
     title: 'Overhand Pull-ups',
@@ -27,7 +31,9 @@ export const cardList: ICard[] = [
     rules: {
       qty: 10,
       seconds: null
-    }
+    },
+    equipment: ['overhead-bar'],
+    traits: ['arms', 'back', 'shoulder']
   },
   {
     title: 'Squats',
@@ -36,7 +42,9 @@ export const cardList: ICard[] = [
     rules: {
       qty: 30,
       seconds: null
-    }
+    },
+    equipment: [],
+    traits: []
   },
 ];
 
